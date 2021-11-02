@@ -1,0 +1,26 @@
+#! /bin/bash
+
+
+#FACTORIAL10: Calcula el factorial del número que se pase como parámetro posicional 1, tal que dicho número debe ser menor o igual que 10
+# y que obligatoriamente exista. De no ser así lanza mensaje de error y finaliza.
+
+
+declare A=1;
+N=$1;
+
+if [[ $N ]]; then
+	if [ $N -lt 1 ] || [ $N -gt 10 ] || [ $# -gt 1 ]; then
+		echo "Debes introducir un único número entre 1 y 10 (incluidos) para que funcione";
+		exit;
+	else 
+		for ((N;N>1;N--));do
+			A=$(($A*$N));
+		done
+		echo "El factorial de $1 es: $A";
+	fi
+else 
+	echo "Debes introducir un único número entre 1 y 10 (incluidos) para que funcione";
+	exit;
+fi
+
+

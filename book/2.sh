@@ -1,0 +1,17 @@
+#! /bin/bash
+
+#EJERCICIO 2. PEDIR DOS NUMEROS Y
+#MOSTRAR EL RESULTADO DE SU MULTIPLICACIÓN
+
+declare X=0;Y=0;Z=0;
+
+read -p " INTRODUZCA UN NÚMERO--> " X;
+read -p " INTRODUZCA OTRO NÚMERO--> " Y;
+
+Z=$(($X*$Y));
+
+echo " EL RESULTADO DE LA MULTIPLICACIÓN ES:" $Z;
+
+#exit;
+
+

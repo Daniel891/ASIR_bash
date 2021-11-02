@@ -1,0 +1,1 @@
+function busca () { R="$(find / -iname $1 2>/dev/null)"; if ! [[ $R ]]; then echo "NO SE ENCUENTRA EL OBJETO EN EL SISTEMA"; else echo $R; fi; }

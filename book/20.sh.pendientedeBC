@@ -1,0 +1,15 @@
+#! /bin/bash
+
+#EJERCICIO 20. DADO UN PRECIO Y UN PORCENTAJE, CALCULAR LA REBAJA Y EL PRECIO FINAL
+
+declare P=0;D=0;R=0;F=0;
+
+read -p "INTRODUCE PRECIO INICIAL--> " P;
+read -p "INTRODUCE PORCENTAJE DE DESCUENTO--> " D;
+
+#R=$(($D/100*$P));
+#F=$(($P-$R));
+R=$(($D/100));
+echo "CON UNA REBAJAS DE $R€, el precio final es de $F€";
+
+exit;

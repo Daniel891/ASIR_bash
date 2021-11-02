@@ -1,0 +1,19 @@
+#! /bin/bash
+
+#Con un bucle while o until y utilizando el parametro posicional $#, hacer un programa que pinte todos los parámetros que entren uno 
+#debajo de otro
+
+declare P=0;X=0;
+
+P=$*;
+
+#read -p "Introduce parámetros" P;
+
+while [ $X -lt $# ]
+	do
+		P=$(($P+1));
+		echo $P;
+		X=$(($X+1));
+	done
+
+exit;

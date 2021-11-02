@@ -1,0 +1,14 @@
+#! /bin/bash
+
+grep "$1" /etc/profile;
+
+if [ $? -ne 0 ] ; then
+	exit;
+fi
+
+grep "$1" /etc/profile | cut -f1 -d ":";
+
+if [ $? -ne 0 ] ; then
+	echo "algo ha ido mal";
+        exit; 
+fi
