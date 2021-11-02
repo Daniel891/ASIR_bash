@@ -11,7 +11,12 @@ CARACTERES PARA QUE BUSQUE TODOS LOS QUE SE LLAMEN IGUAL";
 done;
 
 if [ "$1" == "-c" ] && [[ $2 == +([[:digit:]]) ]] && [ $2 -gt 0 ]; then
-	
+	B=find / -type f;
+	for A in B; do
+		if [ ${#A} -eq ${#$2};then
+			echo $A;
+		fi
+	done;	
 	exit;
 fi
 
