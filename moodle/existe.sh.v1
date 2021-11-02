@@ -1,0 +1,44 @@
+#! /bin/bash
+
+clear;
+
+if [[ $1 ]] && [ $# -eq 1 ];
+then
+	U=$(grep "$1" /etc/passwd | cut -d: -f1);
+
+	for A in $U;
+	do
+
+	if [ "$1" == "$A" ]; 
+	then
+		echo "EL USUARIO $1 EXISTE";
+		dir=$(grep "$1" /etc/passwd | cut -d: -f6);
+		id=$(grep "$1" /etc/passwd | cut -d: -f3);
+		gp=$(groups "$1");
+		ejc=$(grep "$1" /etc/passwd | cut -d: -f7);
+		pas=$(grep "$1" /etc/passwd | cut -d: -f2);
+	
+		echo "Su directorio de trabajo es: $dir";
+		echo "El identificador es: $id";
+		echo "Pertenece al grupo: $gp";
+		echo "Cuando se conecta al sistema se ejecuta: $ejc";
+
+		if [ "$pas" == "x" ];
+		then
+			echo "Tiene palabra de paso";
+		else
+			echo "No tiene palabra de paso";
+		fi
+		exit;
+	else
+		echo "EL USUARIO NO EXISTE";
+		exit;
+	fi
+
+	done
+else
+	echo "El programa funciona añadiendo como argumento un nombre de usuario para comprobar si existe";
+	exit;
+fi
+
+exit;
