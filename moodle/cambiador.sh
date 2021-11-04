@@ -10,8 +10,8 @@ while ! [ -z $1 ] && ! [ ${#1} -eq 3 ] && ! [ $# -eq 1  ]; do
 done
 
 if [[ $1 == +([[:digit:]]) ]]; then
-	for ((A=0;A<3;A++));do
-		echo ${1:A:3};
+	for (( A=0; A<${#1}; A++ ));do
+		echo ${1:$A:1};
 	done
 	echo "va bien supongo";
 	exit;
