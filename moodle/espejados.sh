@@ -4,9 +4,9 @@ clear;
 
 function inversion () {
         B='';
-        L=$(($(echo $1 | wc -m)-2));
+#        L=$(($(echo $1 | wc -m)-2));
 
-        for ((I=0;I<=$L;I++)); do
+        for ((I=0;I<=${#1};I++)); do
                 B=${1:$I:1}${B};
         done
 }
