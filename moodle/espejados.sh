@@ -1,6 +1,16 @@
-#! /bin/bash
+#! /bin/bash 
 
 clear;
+
+function inversion () {
+        B='';
+        L=$(($(echo $1 | wc -m)-2));
+
+        for ((I=0;I<=$L;I++)); do
+                B=${1:$I:1}${B};
+        done
+}
+
 
 if [ -f /var/tmp/$USER.mirror ];then
 	rm /var/tmp/$USER.mirror;
@@ -12,7 +22,10 @@ else
 	F=$(find $1 -printf '%f \n');
 	
 	for A in $F;do
-		#L=$(($(wc -m $A)-1));
-		
-		for (( I=0;I<$(wc -m $A);I++ ));do
-			
+		inversion $A;
+		echo $A:$B >> /var/tmp/$USER.mirror;
+	done
+	exit;
+fi
+
+exit;
