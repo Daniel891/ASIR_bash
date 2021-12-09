@@ -2,14 +2,13 @@
 
 clear;
 
-N=$(ps -u -h | wc -l);
+N=$(ps -u -h $1 | wc -l);
 N=$(($N-2));
-
-#ps -uh | awk '{print $11}' | head -1
+PANTIG=$((ps -uh $1 | awk '{print $11}' | head -1));
 echo "USUARIO: " $USER;
 echo "*****************************************************************";
 echo "PROCESOS EN EJECUCIÓN USUARIO: " $N;
-echo "PROCESO MÁS ANTIGUO DEL USUARIO: ";
+echo "PROCESO MÁS ANTIGUO DEL USUARIO: "$PANTIG;
 echo "*****************************************************************";
 echo "DIRECTORIOS DEL USUARIO: ";
 echo "FICHEROS REGULARES DEL USUARIO: ";

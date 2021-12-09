@@ -11,6 +11,7 @@ function inversion () {
         done
 }
 
+B='';
 
 if [ -f /var/tmp/$USER.mirror ];then
 	rm /var/tmp/$USER.mirror;
