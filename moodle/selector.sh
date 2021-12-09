@@ -2,10 +2,11 @@
 
 clear;
 
-unset A;
-A=$RANDOM;
-N=${A:$((${#A}-1)):1};
-
+function aleatorio () {
+	unset A;
+	A=$RANDOM;
+	N=${A:$((${#A}-1)):1};
+}
 
 function colores () {
 	case $N in
@@ -70,7 +71,7 @@ function herramientas () {
 function superheroes () {
         case $N in
                 1|2)
-                        echo "Superaman"
+                        echo "Superman"
                         ;;
                 3|4)
                         echo "Spiderman"
@@ -95,24 +96,24 @@ do
 
 	case "$REPLY" in
 		1)
+			aleatorio;
 			echo $A;
-			colores;
-			unset A
+			colores
 			;;
 		2)
+			aleatorio;
                         echo $A;
-                        frutas;
-			unset A
+                        frutas
 			;;
 		3)
+			aleatorio;
                         echo $A;
-                        herramientas;
-			unset A
+                        herramientas
 			;;
 		4)
+			aleatorio;
                         echo $A;
-                        superheroes;
-			unset A
+                        superheroes
 			;;
 		5)
 			echo "Hasta luego...";
