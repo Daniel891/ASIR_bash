@@ -20,7 +20,7 @@ fi
 if ! [ -d $1 ] && ! [ $# -eq 1 ];then
 	echo "El programa funciona añadiendole un único parámetro posicional que debe ser un directorio";
 else
-	F=$(find $1 -printf '%f \n' 2>/dev/null);
+	F=$(find $1 -printf '%f \n' | sort 2>/dev/null);
 	
 	for A in $F;do
 		inversion $A;
