@@ -1,5 +1,7 @@
 #! /bin/bash
 
+#PROGRAMA QUE RECIBE CUALQUIER CANTIDAD DE NÚMEROS (ENTEROS POSITIVOS), LOS METE EN UN VECTOR Y LOS DEVUELVE ORDENADOS ASCENDENTEMENTE
+
 clear;
 
 declare C=0;
@@ -9,6 +11,11 @@ declare T=0;
 
 for N;
 do
+	if [[ $N != +([[:xdigit:]]) ]];
+	then
+		echo "ERROR: Este programa solo funciona recibiendo números enteros positivos";
+		exit;
+	fi
 	V[C]=$N;
 	((C++));
 done
