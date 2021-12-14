@@ -2,7 +2,7 @@
 
 clear;
 
-if [ $# -eq 2 ] && [ -f $@ ];then
+if [ $# -eq 2 ] && [[ -f $1 ]] && [[ -f $2 ]]; then
 	A=$(ls -l $1 | awk '{print $5}');
 	B=$(ls -l $2 | awk '{print $5}');
 	if [ $A -eq $B ];then
@@ -13,7 +13,7 @@ if [ $# -eq 2 ] && [ -f $@ ];then
 	fi
 	exit;
 else
-	echo "Uso: ./compare.sh archivo1 archivo2";
+	echo "Uso: ./compare.sh {archivo1 archivo2}";
 fi
 
 exit;
